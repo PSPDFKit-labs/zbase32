@@ -6,6 +6,10 @@ defmodule ZBase32 do
   """
   use Bitwise
 
+  @doc ~S"""
+  Encodes a binary string into a z-base-32 encoded string.
+  """
+  @spec encode(binary) :: String.t
   def encode(<<>>), do: <<>>
   def encode(data) when is_binary(data) do
     split =  5 * div(byte_size(data), 5)
@@ -35,6 +39,10 @@ defmodule ZBase32 do
     end
   end
 
+  @doc ~S"""
+  Decodes a z-base-32 encoded string into a binary string.
+  """
+  @spec decode(String.t) :: binary
   def decode(<<>>), do: <<>>
   def decode(string) when is_binary(string) do
     split = byte_size(string) - rem(byte_size(string), 8)

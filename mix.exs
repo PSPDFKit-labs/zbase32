@@ -4,6 +4,9 @@ defmodule Zbase32.Mixfile do
   def project do
     [app: :zbase32,
      version: "1.0.0",
+     name: "ZBase32",
+     source_url: "https://github.com/pspdfkit-labs/zbase32",
+     docs: [extras: ["README.md"]],
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -18,7 +21,9 @@ defmodule Zbase32.Mixfile do
 
   defp deps do
     [
-      {:eqc_ex, "~> 1.2.3", only: :test}
+      {:earmark, "~> 0.1", only: :dev},
+      {:eqc_ex, "~> 1.2.3", only: :test},
+      {:ex_doc, "~> 0.11", only: :dev},
     ]
   end
 
