@@ -1,0 +1,3 @@
+{build, "MIX_ENV=test mix deps.get && MIX_ENV=test mix EqcCI"}.
+{test_path, "_build/test/lib/zbase32/ebin/"}.
+{deps, "_build/test/lib/eqc_ex/"}.

@@ -4,7 +4,7 @@ defmodule Zbase32.Mixfile do
   def project do
     [app: :zbase32,
      version: "1.0.0",
-     elixir: "~> 1.1",
+     elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      description: description,

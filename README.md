@@ -28,13 +28,16 @@ Zimmermann's [human-oriented base-32 encoding](http://philzimmermann.com/docs/hu
 
 ## Test coverage
 
-We're using QuiviQ's QuickCheck to ensure correct roundtrips:
+We're using [QuiviQ's QuickCheck](http://www.quviq.com/products/erlang-quickcheck/) to ensure
+correct roundtrips.:
 
 ```elixir
 forall input <- largebinary({:limit, 0, 512}) do
   ensure (input |> ZBase32.encode() |> ZBase32.decode()) == input
 end
 ```
+
+Check out the project on http://quickcheck-ci.com.
 
 This implementation has also manually been verified against the Python
 [zbase32 1.1.5](https://pypi.python.org/pypi/zbase32/) package.
