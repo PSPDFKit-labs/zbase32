@@ -1,5 +1,7 @@
 # ZBase32
 
+[<img src="http://quickcheck-ci.com/p/pspdfkit-labs/zbase32.svg" alt="Build Status" width="130px">](http://quickcheck-ci.com/p/pspdfkit-labs/zbase32)
+
 Efficient implementation of [z-base-32](https://en.wikipedia.org/wiki/Base32#z-base-32), Phil
 Zimmermann's [human-oriented base-32 encoding](http://philzimmermann.com/docs/human-oriented-base-32-encoding.txt).
 
