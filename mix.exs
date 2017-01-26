@@ -21,9 +21,9 @@ defmodule Zbase32.Mixfile do
 
   defp deps do
     [
-      {:earmark, "~> 0.1", only: :dev},
-      {:eqc_ex, "~> 1.2.3", only: :test},
-      {:ex_doc, "~> 0.11", only: :dev},
+      {:earmark, "> 0.0.0", only: :dev},
+      {:eqc_ex, "> 0.0.0", only: :test},
+      {:ex_doc, "> 0.0.0", only: :dev},
     ]
   end
 
