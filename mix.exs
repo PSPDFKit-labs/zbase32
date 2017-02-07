@@ -3,7 +3,7 @@ defmodule Zbase32.Mixfile do
 
   def project do
     [app: :zbase32,
-     version: "1.0.0",
+     version: "1.0.1",
      name: "ZBase32",
      source_url: "https://github.com/pspdfkit-labs/zbase32",
      docs: [extras: ["README.md"]],
