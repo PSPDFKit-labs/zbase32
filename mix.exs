@@ -28,16 +28,7 @@ defmodule Zbase32.Mixfile do
   end
 
   defp description do
-    """
-    Efficient implementation of z-base-32, Phil Zimmermann's human-oriented base-32 encoding.
-
-    z-base-32 is a Base32 encoding designed to be easier for human use and more compact. It includes
-    1, 8 and 9 but excludes l, v and 2. It also permutes the alphabet so that the easier characters
-    are the ones that occur more frequently. It compactly encodes bitstrings whose length in bits is
-    not a multiple of 8, and omits trailing padding characters. z-base-32 was used in Mnet open
-    source project, and is currently used in Phil Zimmermann's ZRTP protocol, and in the Tahoe-LAFS
-    open source project.
-    """
+    "Efficient implementation of z-base-32, Phil Zimmermann's human-oriented base-32 encoding."
   end
 
   defp package do
