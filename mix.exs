@@ -3,7 +3,7 @@ defmodule Zbase32.Mixfile do
 
   def project do
     [app: :zbase32,
-     version: "1.0.1",
+     version: "2.0.0",
      name: "ZBase32",
      source_url: "https://github.com/pspdfkit-labs/zbase32",
      docs: [extras: ["README.md"]],
@@ -34,9 +34,12 @@ defmodule Zbase32.Mixfile do
   defp package do
     [
       files: ["lib", "mix.exs", "README.md", "LICENSE"],
-      maintainers: ["pspdfkit.com"],
+      maintainers: ["PSPDFKit"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/pspdfkit-labs/zbase32"}
+      links: %{
+        "GitHub" => "https://github.com/pspdfkit-labs/zbase32",
+        "PSPDFKit" => "https://pspdfkit.com"
+      }
     ]
   end
 end
