@@ -7,12 +7,20 @@ defmodule ZBase32Test do
 
   test "Base64 alphabet" do
     input = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    assert (input |> encode() |> decode()) == input
+    assert (input |> encode() |> decode()) == {:ok, input}
+  end
+
+  test "gibberish" do
+    assert decode("gibberish") == :error
+  end
+
+  test "empty string" do
+    assert ("" |> encode() |> decode()) == {:ok, ""}
   end
 
   property "encoding" do
     forall input <- largebinary({:limit, 0, 512}) do
-      ensure (input |> encode() |> decode()) == input
+      ensure (input |> encode() |> decode()) == {:ok, input}
     end
   end
 end

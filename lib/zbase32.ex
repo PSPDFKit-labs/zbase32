@@ -42,9 +42,15 @@ defmodule ZBase32 do
   @doc ~S"""
   Decodes a z-base-32 encoded string into a binary string.
   """
-  @spec decode(String.t) :: binary
-  def decode(<<>>), do: <<>>
+  @spec decode(String.t) :: {:ok, binary} | :error
+  def decode(<<>>), do: {:ok, <<>>}
   def decode(string) when is_binary(string) do
+    {:ok, do_decode(string)}
+  rescue
+    _ in [CaseClauseError, ArgumentError] -> :error
+  end
+
+  defp do_decode(string) do
     split = byte_size(string) - rem(byte_size(string), 8)
     <<main::size(split)-binary, rest::binary>> = string
     main = for <<c::8 <- main>>, into: <<>>, do: <<dec(c)::5>>
