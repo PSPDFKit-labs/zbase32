@@ -43,11 +43,21 @@ defmodule ZBase32 do
   Decodes a z-base-32 encoded string into a binary string.
   """
   @spec decode(String.t) :: {:ok, binary} | :error
-  def decode(<<>>), do: {:ok, <<>>}
   def decode(string) when is_binary(string) do
-    {:ok, do_decode(string)}
+    {:ok, decode!(string)}
   rescue
-    _ in [CaseClauseError, ArgumentError] -> :error
+    ArgumentError -> :error
+  end
+
+  @doc ~S"""
+  Decodes a z-base-32 encoded string into a binary string.
+
+  An ArgumentError is raised if the input string is not a z-base-32 encoded string.
+  """
+  @spec decode!(String.t) :: binary
+  def decode!(<<>>), do: <<>>
+  def decode!(string) when is_binary(string) do
+    do_decode(string)
   end
 
   defp do_decode(string) do
@@ -81,6 +91,7 @@ defmodule ZBase32 do
           dec(c7)::5, dec(c8)::5>>
       <<>> ->
         main
+      _ -> raise ArgumentError, "string must be a valid z-base-32 encoded string."
     end
   end
 
