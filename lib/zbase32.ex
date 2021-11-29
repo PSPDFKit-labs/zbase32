@@ -1,8 +1,8 @@
 defmodule ZBase32 do
   @moduledoc ~S"""
-  Z-Base-32: human-oriented base-32 encoding
+  Z-Base-32: human-oriented base-32 encoding.
 
-  http://philzimmermann.com/docs/human-oriented-base-32-encoding.txt
+  https://philzimmermann.com/docs/human-oriented-base-32-encoding.txt
   """
   use Bitwise
 

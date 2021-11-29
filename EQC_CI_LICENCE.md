@@ -1,3 +1,5 @@
+# EQC CI License
+
 This file is an agreement between Quviq AB ("Quviq"), Sven Hultins
 Gata 9, Gothenburg, Sweden, and the committers to the github
 repository in which the file appears ("the owner"). By placing this
